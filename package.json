@@ -1,0 +1,43 @@
+{
+  "name": "dashboard",
+  "version": "1.0.0",
+  "description": "Dashboard Monetizze",
+  "main": "Gulpfile.js",
+  "dependencies": {
+    "gulp": "^3.9.0",
+    "gulp-babel": "^8.0.0",
+    "gulp-cli": "^2.0.1",
+    "gulp-concat": "^2.6.1",
+    "gulp-convert-encoding": "^2.0.1",
+    "gulp-order": "^1.2.0",
+    "jshint": "^2.10.2"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.4.3",
+    "@babel/preset-env": "^7.4.3",
+    "babel-core": "^6.26.3",
+    "babel-polyfill": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "browser-sync": "^2.26.3",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^6.0.0",
+    "gulp-babel": "^8.0.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-connect-php": "^1.0.3",
+    "gulp-convert-encoding": "^2.0.1",
+    "gulp-notify": "^3.2.0",
+    "gulp-rename": "^1.4.0",
+    "gulp-sass": "^4.0.2",
+    "gulp-sourcemaps": "^2.6.5",
+    "gulp-uglify": "^3.0.2"
+  },
+  "scripts": {
+    "dev": "webpack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@gitlab.gestaovianet.com.br:monetizze/app.git"
+  },
+  "author": "Carlos André Couto",
+  "license": "ISC"
+}
