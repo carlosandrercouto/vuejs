@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<title>Exemplos 1</title>
+
+		<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+	</head>
+	
+	<body>
+		<div id="app">
+			{{ msg }}
+			<p v-bind:title="titulo">Teste com Title</p>
+			<p v-if="condicao">Teste com IF</p>
+			<ul>
+				<li v-for="result in registros">
+					<p><strong>Nome:</strong> {{result.nome}}</p>
+					<p><strong>Marca:</strong> {{result.marca}}</p>
+					<p><strong>Modelo:</strong> {{result.modelo}}</p>
+				</li>
+			</ul>
+			<button v-if="!click" v-on:click="usuarioClicou">Salvar</button>
+			<button v-if="click" v-on:click="usuarioClicou">Aguarde...</button>
+			<input type="text" v-model="usuario.nome">
+			<p>Nome:{{usuario.nome}}</p>
+		</div>
+		
+		<script>
+			var app = new Vue({
+				el: "#app",
+				data: {
+					msg: 'Iniciando com Vue JS',
+					titulo: 'Teste com v-vind',
+					condicao: true,
+					registros: [
+						{
+							nome: 'Marcopolo G7 Paradiso 1200',
+							marca: 'Marcopolo',
+							modelo: 'Paradiso 1200'
+						},
+
+						{
+							nome: 'Comil Invictus 1200',
+							marca: 'Comil',
+							modelo: 'Invictus 1200'
+						}
+					],
+					click: false,
+					usuario: { nome: "" }
+				},
+				methods: {
+					usuarioClicou: function () {
+						this.click = !this.click
+					}
+				}
+			})
+		</script>
+	</body>
+</html>
