@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<title>Exemplos 3</title>
+		<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+	</head>
+	
+	<body>
+		<div id="app">
+			<gui-titulo titulo="Formulários"></gui-titulo>
+
+			<!-- Texto Normal -->
+			<div>
+				<p>Texto Normal: {{texto}}</p>
+				<p>
+					<input type="text" v-model="texto">
+				</p>
+			</div>
+
+			<!-- Texto Lazy -->
+			<div>
+				<p>Texto Lazy: {{textoLazy}}</p>
+				<p>
+					<input type="text" v-model.lazy="textoLazy">
+				</p>
+			</div>
+
+			<!-- Textarea -->
+			<p style="white-space: pre-line">Textarea: {{textarea}}</p>
+			<p>
+				<textarea v-model="textarea" cols="40" rows="8"></textarea>
+			</p>
+
+			<!-- Checkbox -->
+			<div>
+				<p>Checkbox: {{checkbox}}</p>
+				<input type="checkbox" id="aceitaTermos" v-model="termosCheckbox">
+				<label for="aceitaTermos">Aceita os termos? {{termosCheckbox}}</label>
+			</div>
+
+			<!-- Multiplos Checkbox -->
+			<div>
+				<p>Multiplos Checkbox: {{notificacoes}}</p>
+				<input type="checkbox" id="receberEmail" value="email" v-model="notificacoes">
+				<label for="receberEmail">Receber Email? {{checkboxes}}</label>
+				<input type="checkbox" id="receberMensagem" value="mensagem" v-model="notificacoes">
+				<label for="receberMensagem">Receber Mensagem? {{checkboxes}}</label>
+				<input type="checkbox" id="receberLigacao" value="ligacao" v-model="notificacoes">
+				<label for="receberLigacao">Receber Ligacao? {{checkboxes}}</label>
+			</div>
+
+			<!-- Radio -->
+			<div>
+				<p>Radio: {{sexo}}</p>
+				<input type="radio" id="masculino" value="m" v-model="sexo">
+				<label for="masculino">Masculino</label>
+				<input type="radio" id="feminino" value="f" v-model="sexo">
+				<label for="feminino">Feminino</label>
+				<input type="radio" id="indefinido" value="none" v-model="sexo">
+				<label for="indefinido">Indefinido</label>
+			</div>
+
+			<!-- Select -->
+			<div>
+				<p>Select: {{ano}}</p>
+				<select v-model="ano">
+					<option value="placeholder" disabled>selecione o Ano</option>
+					<option value="2019">ano 2019</option>
+					<option value="2018">ano 2018</option>
+					<option value="2017">ano 2017</option>
+				</select>
+			</div>
+
+
+			<!-- Multi Select -->
+			<div>
+				<p>Multi Select: {{anoMulti}}</p>
+				<select v-model="anoMulti" multiple> 
+					<option value="placeholder" disabled>selecione os Anos</option>
+					<option value="2019">ano 2019</option>
+					<option value="2018">ano 2018</option>
+					<option value="2017">ano 2017</option>
+				</select>
+			</div>
+			
+			<!-- Number -->
+			<div>
+				<p>Number: {{idade}} - typeof = {{typeof idade}}</p>
+				<input type="number" v-model.number="idade">
+			</div>
+		</div>
+		
+		
+		
+		<script>
+			Vue.component('gui-titulo',{
+				props: ['titulo'],
+				template: '<h2>{{titulo}}</h2>'
+			})
+			
+			var app = new Vue({
+				el: "#app",
+				data: {
+					texto: '',
+					textoLazy: '',
+					textarea: '',
+					termosCheckbox:false,
+					checkbox: '',
+					checkboxes: '',
+					notificacoes: [],
+					sexo: 'none',
+					ano: 'placeholder',
+					anoMulti: ['2018', '2017'],
+					idade: 45,
+	
+				},
+			})
+		</script>
+	</body>
+</html>
