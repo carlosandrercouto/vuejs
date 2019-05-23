@@ -1,14 +1,11 @@
 <template>
-	<h2>{{titulo}}</h2>
+  <h2>{{ titulo }}</h2>
 </template>
 
 <script>
-	export default {
-		props: ['titulo']
-		
-	}
+export default {
+  props: ["titulo"]
+};
 </script>
 
-<style lang="scss">
-	
-</style>
+<style lang="scss"></style>
